@@ -1,0 +1,54 @@
+local import = {
+	-- do not include any sections that are EMPTY
+	["bundlename"] = {
+		["Body Color"] = { -- applies body colors, what do you expect. does not have to be included
+			["HeadColor3"] = Color3.fromRGB(255, 204, 153),
+			["LeftArmColor3"] = Color3.fromRGB(255, 204, 153),
+			["RightArmColor3"] = Color3.fromRGB(255, 204, 153),
+			["LeftLegColor3"] = Color3.fromRGB(255, 204, 153),
+			["RightLegColor3"] = Color3.fromRGB(255, 204, 153),
+			["TorsoColor3"] = Color3.fromRGB(255, 204, 153),
+		},
+		["Preset"] = {
+			-- this changes variables from PlayerData. to find all the variables you can change, go into the script and search "variables" and scroll down till you find PlayerDataDefault()
+		},
+		["Accessory"] = {
+			-- adds catalog accessories to the bundle, does NOT apply them directly, meaning the bundle has to be ACTIVELY equipped to be applied
+		},
+		["Clothes"] = {
+			-- not be confused with Clothing, adds catalog clothes to the bundle, does NOT apply them directly, meaning the bundle has to be ACTIVELY equipped to be applied
+		},
+		["TClothes"] = {
+			-- tearclothes alternate to clothes. has to be actively equipped for it to work
+		},
+		["Clothing"] = {
+			-- this bundle will automatically equip all the specified clothes from the script
+		},
+		["Recolor"] = {
+			-- recolors the clothing that the bundle applies. recolors Primary, Secondary, and Tertiary
+			["Panty"] = { -- example
+				["Primary"] = Color3.fromRGB(255, 172, 233)
+			}
+		},
+		["MeshEdit"] = {
+			-- modifies the meshes within clothes
+			["Sock 1"] = { -- example
+				Offset = Vector3.new(0.4,0.2,0),
+				Material = Enum.Material.Fabric
+			}
+		},
+		["HPClothes"] = {
+			-- modifies clothing HP type
+			["Pussy Closed"] = { -- example
+				["HP"] = "BottomHP", -- TopHP/BottomHP/nil
+				["Inverse"] = true -- false: shows up when HP is healed, true: shows up when HP is gone
+			}
+		},
+		["NippleColor"] = Color3.fromRGB(80, 80, 80), -- bundle will change NippleColor to this color if bundle is equipped, does not override
+		["IsPreset"] = false, -- labels the bundle as a PRESET, which means that its mainly meant to change variables instead of being a bundle (bundle is for characters) does not have to be included, false by default **(USING THIS WILL NOT CHANGE CURRENTBUNDLE, MEANING ITLL COMPLETELY AVOID APPLYING CATALOG CLOTHES FROM THIS BUNDLE)**
+		["ClothingBundle"] = false, -- labels the bundle as a CLOTHINGBUNDLE, which means that its entirely just a set of clothes from the script, THIS DOES NOT INCLUDE ACCESSORIES. does not have to be included, false by default **(USING THIS WILL NOT CHANGE CURRENTBUNDLE, MEANING ITLL COMPLETELY AVOID APPLYING CATALOG CLOTHES FROM THIS BUNDLE)**
+		["Override"] = false, -- when true, will override Clothes with this bundle no matter what. does not have to be included, false by default
+	},
+	-- ["bundlename2"] = { -- example of another bundle }
+}
+return import
